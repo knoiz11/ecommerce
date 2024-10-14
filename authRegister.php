@@ -17,8 +17,7 @@
             $database = "ecommerce";
             $dbusername = "root";
             $dbpassword = "";
-    // insert record
-    // validate confirmpassword
+
 
             $dsn = "mysql: host=$host;dbname=$database;";
             try {
