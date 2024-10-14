@@ -10,7 +10,7 @@
     
         
         if(trim($password) == trim($confirmPassword)){
-            // connect database
+        
             
             
             $host = "localhost";
