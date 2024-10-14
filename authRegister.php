@@ -8,7 +8,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
     
-        // verify password and confirmPass to be match
+        
         if(trim($password) == trim($confirmPassword)){
             // connect database
             
