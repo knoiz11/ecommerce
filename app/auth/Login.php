@@ -26,13 +26,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $users = $stmt->fetchAll();
         if($users){
             if(password_verify($password,$users[0]["password"])){
-                echo "log in successful";
-                $_SESSION["fullname"] = $users[0]["fullname"];
+                header("location: /index.php");
+                $_SESSION["fullname"] = $users[0]["fullname"] ;
+                exit;
             } else {
-                echo "password did not match";
+                header("location: /Login.php");
+                $_SESSION["error"] = "password did not match";
+            exit;
             }
+        
         } else {
-            echo "user not exist";
+            header("location: /Login.php");
+            $_SESSION["error"] = "user not found";
+            exit;
         }
     } catch (Exception $e) {
         echo "Connection Failed: " . $e->getMessage();
