@@ -13,7 +13,7 @@
                 <img src="https://via.placeholder.com/500" alt="Product Image" class="img-fluid">
             </div>
 
-            <!-- Product Information -->
+            
             <div class="col-md-6">
                 <h2>Product Name</h2>
                 <p class="lead">$50.00</p>

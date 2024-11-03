@@ -1,6 +1,7 @@
     
     <?php
     session_start();
+    require_once(__DIR__."/app/config/Directories.php");
     require_once("includes/header.php");
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

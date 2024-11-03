@@ -1,6 +1,7 @@
     <!-- Header -->
     <?php 
     session_start();
+    require_once(__DIR__."/app/config/Directories.php");
     require_once("includes/header.php") ?>
     
 

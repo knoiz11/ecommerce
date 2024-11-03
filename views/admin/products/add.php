@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
+    require_once(ROOT_DIR."includes/header.php");
+?>
+    <?php require_once(ROOT_DIR."includes/navbar.php"); ?>
+
+    <?php require_once(ROOT_DIR."views/components/page-guard.php"); ?>
+    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +49,8 @@
             </div>
         </div>
     </nav>
+
+    <?php require_once(__DIR__."/../../components/page-guard.php"); ?>
 
     <!-- Product Maintenance Form -->
     <div class="container my-5">
