@@ -4,6 +4,7 @@ if(!isset($_SESSION)){
 }
 require_once(__DIR__."/../config/Directories.php"); 
 include(__DIR__."/../config/DatabaseConnect.php"); 
+
 $db = new DatabaseConnect(); 
 
 
@@ -21,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $productDesc    = htmlspecialchars($_POST["description"]);
     $category       = htmlspecialchars($_POST["category"]);
     $basePrice      = htmlspecialchars($_POST["basePrice"]);
-    $numberOfStocks = htmlspecialchars($_POST["numberofStocks"]);
+    $numberOfStocks = htmlspecialchars($_POST["numberOfStocks"]);
     $unitPrice      = htmlspecialchars($_POST["unitPrice"]);
     $totalPrice     = htmlspecialchars($_POST["totalPrice"]);
 

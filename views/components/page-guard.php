@@ -8,9 +8,10 @@
             <p class="lead">Sorry, you are not authorized to view this page.</p>
             <a href="login.html" class="btn btn-primary">Go to Login</a>
         </div>
-    </div> 
-</body>
-</html>
+    </div>
+
+    
+<?php require_once(ROOT_DIR."/includes/footer.php"); ?>
 <?php
 exit;
 }
