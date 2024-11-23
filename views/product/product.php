@@ -104,8 +104,9 @@
 
                         <!-- Add to Cart Button -->
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg">Add to Cart</button>
-                        </div>
+                        <button class="btn btn-success btn-sm mt-2" <?php echo ($product['stocks'] <= 0 ? "disabled" : ""); ?>>
+                            <?php echo ($product['stocks'] <= 0 ? "Sold out" : "Add to Cart"); ?>
+                        </button>
                     </form>
                 </div>
                
@@ -196,6 +197,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
 
 
 
