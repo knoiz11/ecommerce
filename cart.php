@@ -47,41 +47,41 @@ if(isset($_SESSION["success"])){
     <!-- Shopping Cart -->
     <div class="container mt-5">
         <div class="row">
-            <!-- Shopping Cart Items -->
-            <div class="col-md-8">
-                <h3>Shopping Cart</h3>
-                <table class="table table-bordered">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Item</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if($carts){ 
-                        foreach($carts as $indvCart){ 
-                            
-                        ?>
-                        <tr>
-                            <td><?php echo $indvCart["product_name"]?></td>
-                            <td><?php echo $indvCart["quantity"]?></td>
-                            <td><?php echo number_format($indvCart["unit_price"],2)?></td>
-                            <td><?php echo number_format($indvCart["total_price"],2)?></td>
-                        </tr>
-                        <?php 
-                        $subtotal += $indvCart["total_price"];
-                        }
-                        ?> 
-                        <?php } else {?>
-                            <tr>
-                                <td colspan = "4" class="text-center">You do not have any products yet</td>
-                            </tr>
-                        <?php }?>
-                    </tbody>
-                </table>
-            </div>
+<!-- Shopping Cart Items -->
+<div class="col-md-8">
+    <h3>Shopping Cart</h3>
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php if ($carts){ ?>
+            <?php foreach($carts as $indvCart){ ?>
+                <tr>
+                    <td><?php echo $indvCart["product_name"]; ?> </td>
+                    <td><?php echo $indvCart["quantity"]; ?> </td>
+                    <td><?php echo $indvCart["unit_price"]; ?></td>
+                    <td><?php echo number_format($indvCart["unit_price"] * $indvCart["quantity"], 2); ?></td>
+                </tr>
+                <?php 
+                $indvCart["total_price"] = $indvCart["unit_price"] * $indvCart["quantity"];
+                $subtotal += $indvCart["total_price"];
+            } ?>
+        <?php } else { ?>
+            <!-- Display a message when the cart is empty -->
+            <tr>
+                <td colspan="4">Your cart is empty.</td>
+            </tr>
+        <?php } ?>
+        
+        </tbody>
+    </table>
+</div>
 
             <!-- Cart Summary and Payment -->
             <div class="col-md-4">
