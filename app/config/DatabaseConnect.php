@@ -3,9 +3,9 @@
 
 class DatabaseConnect {
     private $host = "localhost";
-    private $database = "ecommerce";
-    private $dbusername = "root";
-    private $dbpassword = "";
+    private $database = "ecommerce_jgimeno";
+    private $dbusername = "jgimeno";
+    private $dbpassword = "J8!meno_2024";
     private $charset    = 'utf8mb4';
     private $conn = null;
 

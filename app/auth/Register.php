@@ -17,7 +17,7 @@ session_start();
             
             // connect database
             $host = "localhost";
-            $database = "ecommerce";
+            $database = "ecommerce_";
             $dbusername = "root";
             $dbpassword = "";
     // insert record

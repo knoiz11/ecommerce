@@ -1,5 +1,5 @@
 <?php 
-require_once $_SERVER["DOCUMENT_ROOT"] . '/app/config/directories.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/app/config/Directories.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light"> 

@@ -12,17 +12,22 @@ $userId   = $_SESSION["user_id"];
 $subtotal = 0;
 $purchase_total = 0;
 try {
-    $sql = "SELECT carts.id, products.product_name, carts.quantity, carts.unit_price, carts.total_price"
-            ." FROM carts "
-            ." LEFT JOIN products ON products.id = carts.product_id"
-            ." WHERE carts.user_id = $userId ";
-    $stmt = $conn ->prepare($sql);
-    $stmt -> execute();
-    $carts = $stmt -> fetchAll();
-    
-} catch (PDOException $e){
-   echo "Connection Failed: " . $e->getMessage();
-   $db = null;
+    $sql = "SELECT carts.id, products.product_name, carts.unit_price, carts.quantity, carts.total_price "
+        . " FROM carts "
+        . " LEFT JOIN products ON products.id = carts.product_id "
+        . " WHERE carts.user_id = :p_user_id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':p_user_id', $userId);
+    $stmt->execute();   
+    $carts = $stmt->fetchAll();
+
+    foreach($carts as &$cart) {
+        $cart["total_price"] = $cart["unit_price"] * $cart["quantity"];
+    }
+
+} catch (PDOException $e) {
+    echo "Connection Failed: " . $e->getMessage();
+    $db = null;
 }
 
 require_once(ROOT_DIR."includes/header.php");
@@ -42,7 +47,7 @@ if(isset($_SESSION["success"])){
 ?>
 
     <!-- Navbar -->
-    <?php require_once("includes\\navbar.php"); ?>
+    <?php require_once("includes//navbar.php"); ?>
 
     <!-- Shopping Cart -->
     <div class="container mt-5">
