@@ -1,6 +1,8 @@
 <?php 
 
 
+
+/*
 class DatabaseConnect {
     private $host = "localhost";
     private $database = "ecommerce_jgimeno";
@@ -8,6 +10,16 @@ class DatabaseConnect {
     private $dbpassword = "J8!meno_2024";
     private $charset    = 'utf8mb4';
     private $conn = null;
+*/
+
+ class DatabaseConnect {
+    private $host = "localhost";
+    private $database = "ecommerce";
+    private $dbusername = "root";
+    private $dbpassword = "";
+    private $charset    = 'utf8mb4';
+    private $conn = null;
+    
 
 
     public function connectDB(){
