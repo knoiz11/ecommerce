@@ -59,19 +59,18 @@
     <!-- Featured Products Section -->
     <div class="container content my-5" id="products">
         <h2 class="text-center mb-4">Featured Products</h2>
-        <div class="row gy-5"
-
-    <div class="row">
-    <?php
-        foreach($productList as $product){
-            include(ROOT_DIR.'views/components/product-cart.php');
-        }
-    ?>
-</div>
+        <div class="row gy-5">
+            <div class="row">
+                <?php
+                    foreach($productList as $product){
+                        include(ROOT_DIR.'views/components/product-cart.php');
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Footer -->
     <?php require_once("includes/footer.php") ?>
-
-
 

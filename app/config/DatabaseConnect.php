@@ -12,6 +12,7 @@ class DatabaseConnect {
     private $conn = null;
 */
 
+
  class DatabaseConnect {
     private $host = "localhost";
     private $database = "ecommerce";
@@ -19,6 +20,8 @@ class DatabaseConnect {
     private $dbpassword = "";
     private $charset    = 'utf8mb4';
     private $conn = null;
+
+
     
 
 

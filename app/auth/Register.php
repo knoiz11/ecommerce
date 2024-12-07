@@ -16,10 +16,18 @@ session_start();
 
             
             // connect database
+            
             $host = "localhost";
-            $database = "ecommerce_";
+            $database = "ecommerce";
             $dbusername = "root";
             $dbpassword = "";
+            
+            /* 
+            $host = "localhost";
+            $database = "ecommerce_jgimeno";
+            $dbusername = "jgimeno";
+            $dbpassword = "J8!meno_2024";
+            */
     // insert record
     // validate confirmpassword
 
